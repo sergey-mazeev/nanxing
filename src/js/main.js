@@ -42,6 +42,17 @@ window.addEventListener('load', () => {
                 nextEl: '.swiper-button-next_projects',
                 prevEl: '.swiper-button-prev_projects',
             },
+            breakpoints: {
+                900: {
+                    slidesPerView: 1,
+                },
+                630: {
+                    slidesPerView: 2,
+                },
+                320: {
+                  slidesPerView: 1,
+                },
+            },
             on: {
                 beforeInit: (swiper) => {
                     const countSlides = swiper.slides.length;
@@ -55,12 +66,14 @@ window.addEventListener('load', () => {
                     bindProjectPopups();
                 },
                 activeIndexChange: (swiper) => {
-                    for (const slide of swiper.slides) {
-                        slide.style.width = 'calc(25% - 15px)';
+                    if (window.matchMedia('(min-width: 1150px)').matches) {
+                        for (const slide of swiper.slides) {
+                            slide.style.width = 'calc(25% - 15px)';
+                        }
+                        swiper.slides[swiper.activeIndex].style.width = 'calc(75% - 15px)';
+                        swiper.updateSlides();
+                        swiper.slideReset();
                     }
-                    swiper.slides[swiper.activeIndex].style.width = 'calc(75% - 15px)';
-                    swiper.updateSlides();
-                    swiper.slideReset();
                 }
             },
         });
@@ -79,6 +92,20 @@ window.addEventListener('load', () => {
                 nextEl: '.swiper-button-next_videos',
                 prevEl: '.swiper-button-prev_videos',
             },
+            breakpoints: {
+                1150: {
+                    slidesPerView: 4,
+                },
+                850: {
+                    slidesPerView: 3,
+                },
+                550: {
+                    slidesPerView: 2,
+                },
+                260: {
+                  slidesPerView: 1,
+                },
+            }
         });
     }
 })

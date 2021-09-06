@@ -1,0 +1,30 @@
+extends main/page_default
+
+block head
+	title Главная страница
+
+block beforeBody
+	-bodyClasses.push('front')
+
+block content
+
+	+front-video
+	main.content
+		+front-about
+		+front-project-list
+		+front-videos
+		+front-text-block
+
+	#modal-projects.modal.modal_projects
+		.modal__body
+			.modal__header
+				.modal__title 123
+				button.modal__close закрыть
+			.modal__content
+
+	#modal-videos.modal.modal_videos
+		button.modal__control.modal__control_prev(type='button', data-action='dec') Назад
+		button.modal__control.modal__control_next(type='button', data-action='inc') Вперед
+		button.modal__close закрыть
+		.modal__body
+			.video_169#video169

@@ -1,0 +1,46 @@
+mixin front-videos
+	section.front-block
+		.container
+			h1.front-block__title Реализованные проекты
+			.front-block__content
+				+videos-list
+
+mixin videos-list
+	.videos-list
+		.videos-list__slider
+			.swiper
+				.swiper-wrapper
+					.swiper-slide
+						+video-item('pL6ZTVMsgnc', 'NCB2412S-CNC 6 - sided drilling machine')
+					.swiper-slide
+						+video-item('GVvRImN-u_w', 'CNC Nesting Machine with AL+UL NCG2812L')
+					.swiper-slide
+						+video-item('fj-D1DqJwNU', 'Nanxing Edge Banding Machine for Soft Forming')
+					.swiper-slide
+						+video-item('fiqguNoRkAI', 'Nanxing Edge Banding Machine Line')
+					.swiper-slide
+						+video-item('fiqguNoRkAI', 'Nanxing Edge Banding Machine Line')
+					.swiper-slide
+						+video-item('fj-D1DqJwNU', 'Nanxing Edge Banding Machine for Soft Forming')
+			.swiper-pagination.swiper-pagination_videos
+			.swiper-button-prev.swiper-button-prev_videos
+			.swiper-button-next.swiper-button-next_videos
+		a.videos-list__btn.btn.btn_ghost(href='https://www.youtube.com/c/NanxingMachinery' rel='nofollow', target='_blank'): span Наш канал на Youtube
+
+mixin video-item(youtubeURL, name)
+	a.video-item.js-youtube-link(href='https://www.youtube.com/watch?v=' + youtubeURL, data-code= youtubeURL target='_blank', rel='nofollow')
+		.video-item__img-wrapper.video-link
+			img.video-item__img(src='https://img.youtube.com/vi/' + youtubeURL + '/0.jpg', alt='Nanxing Youtube')
+			span
+		.video-item__title= name
+
+mixin project2
+	.project-item
+		a.project-item__img.js-project-popup(href='#modal-projects'): img(src='img/content/project1.jpg', alt='Nanxing')
+		h4.project-item__title Мебельная фабрика <br>"Мебель для Жизни"
+		p.project-item__text Свой путь в мебельном бизнесе компания "Мебель для Жизни" начинала на оборудовании европейских производителей.
+		a.project-item__more.btn.btn_main.js-project-popup(href='#modal-projects') Подробнее
+		.project-item__popup-text
+			p Свой путь в мебельном бизнесе компания "Мебель для Жизни" начинала на оборудовании европейских производителей. В конце 2019 года встала задача расширть производство в Нижнем Новгороде. Для новой производственной площадки была важна быстрая окупаемость и бесперебойность работы. С технологами Nanxing пришли к выводу что начать надо с форматно-раскроечного станка MJ1132F и кромкооблицовочного станка MF50S. В результате эксплуатации, оборудование превысило наши ожидания по производительности и надежности, а марка Nanxing заслужила доверие.
+			p Таким образом, для дальнейшего развития производства была выбрана компания Nanxing. И когда встал вопрос приобретения высокопроизводительного оборудования индустриального класса, были выбраны кромкооблицовочный станок NB8CHJQ и сверлильно-присадочный центр с ЧПУ Nanxing NCB612D. Нужную производительность мы получили в течении месяца. Да еще и с системой штрихкодирования под управлением БАЗИС-МЕБЕЛЬЩИК, которая в связке со станками Nanxing идеально подошла для производства индивидуальной мебели.
+			p "Мебель для Жизни" активно развивается, есть планы с Nanxing по автоматизации и роботизации производственных линий. Будущее для нас уже наступило.

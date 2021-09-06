@@ -1,0 +1,17 @@
+/*@font-face {
+  font-family: 'GothamPro';
+  src: url('../fonts/GothamProReg.woff2') format('woff2'),
+  url('../fonts/GothamProReg.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}*/
+
+/* montserrat-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat'),
+  url('../fonts/montserrat-v18-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/montserrat-v18-latin_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

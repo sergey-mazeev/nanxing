@@ -1,0 +1,21 @@
+mixin footer
+	footer.footer
+		.container
+			.footer__row.footer__row_1
+				a.footer__logo(href='/'): img(src='img/logo_footer.png', alt='Nanxing logo' width='44')
+				.footer__menu
+					ul
+						each item in ['О заводе', 'Новости', 'Лизинг', 'Проекты', 'Сервис', 'Отзывы', 'Контакты']
+							li: a(href='#')= item
+			.footer__row
+			.footer__row.footer__row_3
+				.footer__contacts
+					.footer__contacts-block.footer__contacts-block_mail
+						a(href='mailto:info@nanxing.ru') info@nanxing.ru
+					.footer__contacts-block.footer__contacts-block_phone
+						a(href='tel:88001111111') 8 800 111 1111
+						a(href='tel:84951111111') 8 495 111 1111
+					.footer__contacts-block.footer__contacts-block_callback
+						a.btn.btn_ghost-white(href='#'): span Заказать звонок
+
+	.copyright: .container © 2021 NANXING. Все права защищены.

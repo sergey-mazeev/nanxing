@@ -1,0 +1,34 @@
+mixin header
+	header.header
+		.header__line.header__line_1
+			.container
+				a.header__logo(href='/')
+					img(src='img/logo_N.png', alt='Nanxing Logo')
+					span <i>Nanxing</i><i>Machinery</i>
+				.header__contacts
+					.header__contacts-block.header__contacts-block_mail: a(href='mailto:info@nanxing.ru') info@nanxing.ru
+					.header__contacts-block.header__contacts-block_time Пн-Пт <br>с 09 до 18
+					.header__contacts-block.header__contacts-block_phone
+						a(href='tel:88001111111') 8 800 111 1111
+						a(href='tel:84951111111') 8 495 111 1111
+				.header__search.header-search#headerSearch
+					button.header-search__button#headerSearchButton(type='button'): span Поиск <br>по сайту
+					.header-search__popup
+						button.header-search__popup-close#headerSearchPopupClose(type='button') Закрыть
+						form
+							input#headerSearch(type='text', placeholder='Поиск')
+							input(type='submit', value='')
+
+				a.header__callback.btn.btn_ghost(href='#'): span Заказать звонок
+				button#headerBurger.header__burger(type='button') Открыть меню
+
+		.header__line.header__line_2#headerMobile
+			.container
+				.header__catalog.header-catalog
+					a.header-catalog__link(href='#') Каталог
+					.header-catalog__list
+				nav.header__menu
+					ul
+						each item in ['О заводе', 'Новости', 'Лизинг', 'Проекты', 'Сервис', 'Отзывы', 'Контакты']
+							li: a(href='#')= item
+				button#headerMobileClose.header__mobile-close(type='button') Закрыть меню

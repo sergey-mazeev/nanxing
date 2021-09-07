@@ -12,6 +12,7 @@ body {
   transition: transform .45s;
   overflow-x: hidden;
 }
+
 .body_menu-opened {
   transform: translateX(280px);
 }
@@ -236,6 +237,7 @@ b, strong {
 	font-size: 0;
 	cursor: pointer;
 	transition: opacity .3s;
+
 	&:hover {
 	  opacity: .55;
 	}
@@ -294,7 +296,7 @@ b, strong {
 	font-size: 2em;
 	margin-bottom: 1.25em;
 	@media screen and (max-width: 800px) {
-	    font-size: 1.75em;
+	  font-size: 1.75em;
 	}
   }
 }
@@ -335,7 +337,7 @@ b, strong {
 	margin-right: auto;
 	margin-bottom: 50px;
 	@media screen and (max-width: 850px) {
-	    font-size: 14px;
+	  font-size: 14px;
 	}
 
 	ul {
@@ -382,7 +384,7 @@ b, strong {
 	  }
 
 	  @media screen and (max-width: 480px) {
-	      flex-direction: row-reverse;
+		flex-direction: row-reverse;
 		position: relative;
 	  }
 
@@ -393,8 +395,9 @@ b, strong {
 		  margin-right: 0;
 		  margin-left: 50px;
 		}
+
 		@media screen and (max-width: 850px) {
-		    flex-direction: row;
+		  flex-direction: row;
 		  img {
 			margin-right: 30px;
 			margin-left: 0;
@@ -496,15 +499,15 @@ b, strong {
 
   .swiper-button-prev,
   .swiper-button-next {
-	background-size: contain;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	width: 12px;
-	height: 22px;
+	height: 100%;
 	display: block;
 	transition: opacity .25s;
-	margin-top: -11px;
+	top: 0;
 	z-index: 6;
+	background-size: 12px 22px;
 
 	&::after {
 	  content: none;
@@ -516,13 +519,25 @@ b, strong {
   }
 
   .swiper-button-prev {
-	left: -20px;
+	left: -44px;
 	background-image: url(svg-encode('<svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.1997 21.3069L10.8461 20.9533L1.24613 11.3533L0.892579 10.9998L1.24613 10.6462L10.8461 1.04623L11.1997 0.692672L11.9068 1.39978L11.5532 1.75333L2.30679 10.9998L11.5532 20.2462L11.9068 20.5998L11.1997 21.3069Z" fill="#8B8A8A"/></svg>'));
+	@media screen and (max-width: 1500px) {
+	  left: -18px;
+	}
+	@media screen and (max-width: 414px) {
+	  left: -14px;
+	}
   }
 
   .swiper-button-next {
-	right: -20px;
+	right: -44px;
 	background-image: url(svg-encode('<svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.800315 0.692993L1.15387 1.04655L10.7539 10.6465L11.1074 11.0001L10.7539 11.3537L1.15387 20.9537L0.800314 21.3072L0.0932074 20.6001L0.446761 20.2465L9.69321 11.0001L0.446761 1.75365L0.0932073 1.4001L0.800315 0.692993Z" fill="#8B8A8A"/></svg>'));
+	@media screen and (max-width: 1500px) {
+	  right: -18px;
+	}
+	@media screen and (max-width: 414px) {
+	  right: -14px;
+	}
   }
 
   .swiper-pagination {

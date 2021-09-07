@@ -43,7 +43,10 @@ window.addEventListener('load', () => {
                 prevEl: '.swiper-button-prev_projects',
             },
             breakpoints: {
-                900: {
+                /*1150: {
+                    slidesPerView: 'auto',
+                },*/
+                /*900: {
                     slidesPerView: 1,
                 },
                 630: {
@@ -51,7 +54,7 @@ window.addEventListener('load', () => {
                 },
                 320: {
                   slidesPerView: 1,
-                },
+                },*/
             },
             on: {
                 beforeInit: (swiper) => {
@@ -73,6 +76,24 @@ window.addEventListener('load', () => {
                         swiper.slides[swiper.activeIndex].style.width = 'calc(75% - 15px)';
                         swiper.updateSlides();
                         swiper.slideReset();
+                    } else if (window.matchMedia('(min-width: 900px)').matches) {
+                        for (const slide of swiper.slides) {
+                            slide.style.width = '100%';
+                            swiper.updateSlides();
+                            swiper.slideReset();
+                        }
+                    } else if (window.matchMedia('(min-width: 630px)').matches) {
+                        for (const slide of swiper.slides) {
+                            slide.style.width = 'calc(50% - 15px)';
+                            swiper.updateSlides();
+                            swiper.slideReset();
+                        }
+                    } else {
+                        for (const slide of swiper.slides) {
+                            slide.style.width = '100%';
+                            swiper.updateSlides();
+                            swiper.slideReset();
+                        }
                     }
                 }
             },

@@ -49,6 +49,7 @@
 
 
   .swiper-slide-active & {
+	@media screen and (min-width: 900px) {
 	display: block;
 	grid-template-areas: "img text"
                        "nav  foot";
@@ -73,6 +74,7 @@
 	}
 	.project-item__more {
 	  grid-area: button;
+	}
 	}
   }
 }

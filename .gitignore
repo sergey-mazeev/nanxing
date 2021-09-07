@@ -1,12 +1,11 @@
 # Custom
 node_modules
-built
 src/templates/layout/generated
 src/scss/generated
 package-lock.json
 yarn.lock
 
-videoplayback.mp4
+#videoplayback.mp4
 built.zip
 
 ### macOS template

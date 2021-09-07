@@ -6,4 +6,217 @@ block head
 block content
 
 	main.content
-		p Пиши всё сюда
+		.about-page
+			.about-page__banner(style="background-image: url('img/about-main.jpg')")
+			.container
+				.about-page__main 
+					h3.about-page__title О заводе Nanxing
+					.about-page__text
+						p Компания Nanxing Machinery специализируется на&nbsp;производстве оборудования для мебельных линий и&nbsp;предлагает превосходные комплексные проекты, в&nbsp;которые входят высокоточные решения для раскроя, высокоскоростные кромкооблицовочные, сверлильно-присадочные станки и&nbsp;обрабатывающие центры с&nbsp;ЧПУ. Благодаря профессионализму и&nbsp;опыту в&nbsp;области автоматизации, а&nbsp;также применению современных технологий, компания получила признание среди клиентов по&nbsp;всему миру.
+					.about-page__main-banner
+						img(src="img/about-banner.jpg", alt="")
+				.about-page__history
+					h3.about-page__title История бренда
+					.about-page__text
+						p Nanxing была основана в&nbsp;1996&nbsp;году. В&nbsp;настоящее время центральный офис фирмы расположен в&nbsp;Дунгуане, провинция Гуандун. Также есть филиал в&nbsp;Гонконге и&nbsp;завод в&nbsp;южной провинции Цзянсу в&nbsp;городе Уси. Продукция поставляется в&nbsp;Китай и&nbsp;по&nbsp;всему миру: в&nbsp;США, Канаду, Германию, Россию, Турцию, Австралию, Малайзию. Центры продаж и&nbsp;сервисного обслуживания расположены в&nbsp;30-ти странах и&nbsp;предлагают оперативные комплексные услуги. Гибкие линии по&nbsp;производству мебели, которые предлагает Nanxing Machinery, подходят под любые требования мебельных предприятий, включая разработку дизайна продукции и&nbsp;оптимизацию процесса обработки в&nbsp;системе станков с&nbsp;ЧПУ. Такая линия позволяет снизить производственные затраты, повысить эффективность завода, сократить время доставки и&nbsp;гарантирует качество продукции. Над созданием линий работает собственная профессиональная команда. Специалисты занимаются исследованием и&nbsp;разработкой новых технологий. За&nbsp;время работы они получили богатый экспертный опыт в&nbsp;области машиностроения, электротехники, автоматизации и&nbsp;интеллектуальных программных разработок. На&nbsp;базе Nanxing создан инновационный технологический центр в&nbsp;провинции Гуандун и&nbsp;центр исследований и&nbsp;разработок в&nbsp;области машиностроения с&nbsp;ЧПУ. На&nbsp;предприятии внедрена сертификация системы контроля качества ISO9001: 2015, вся продукция получила сертификат&nbsp;CE.
+				.about-page__advantages.advantages
+					h3.about-page__title Наши достижения
+					.advantages__slider
+						.swiper
+							.swiper-wrapper
+								.swiper-slide
+									.advantages__pic 
+										img(src="img/adv1.jpg", alt="")
+									.advantages__text 
+										p Национальные <b>высокие</b> технологичные предприятия
+								.swiper-slide
+									.advantages__pic 
+										img(src="img/adv2.jpg", alt="")
+									.advantages__text 
+										p <b>Топ-100</b> производителей в&nbsp;Провинции Гуандуан
+								.swiper-slide
+									.advantages__pic 
+										img(src="img/adv3.jpg", alt="")
+									.advantages__text 
+										p <b>Отличное</b> предприятие по&nbsp;кредитоспособности
+								.swiper-slide
+									.advantages__pic 
+										img(src="img/adv4.jpg", alt="")
+									.advantages__text 
+										p Гуандунское предприятие <b>технологический</b> центр
+								.swiper-slide
+									.advantages__pic 
+										img(src="img/adv5.jpg", alt="")
+									.advantages__text 
+										p Национальные высокие технологичные предприятия
+								.swiper-slide
+									.advantages__pic 
+										img(src="img/adv6.jpg", alt="")
+									.advantages__text 
+										p Национальные высокие технологичные предприятия
+						.swiper-pagination.swiper-pagination_advantages
+						.swiper-button-prev.swiper-button-prev_advantages
+						.swiper-button-next.swiper-button-next_advantages
+				.about-page__videos
+					h3.about-page__title Видео
+					.videos-list
+						.videos-list__slider
+							.swiper
+								.swiper-wrapper
+									.swiper-slide
+										+video-item('pL6ZTVMsgnc', 'NCB2412S-CNC 6 - sided drilling machine')
+									.swiper-slide
+										+video-item('GVvRImN-u_w', 'CNC Nesting Machine with AL+UL NCG2812L')
+									.swiper-slide
+										+video-item('fj-D1DqJwNU', 'Nanxing Edge Banding Machine for Soft Forming')
+									.swiper-slide
+										+video-item('fiqguNoRkAI', 'Nanxing Edge Banding Machine Line')
+									.swiper-slide
+										+video-item('fiqguNoRkAI', 'Nanxing Edge Banding Machine Line')
+									.swiper-slide
+										+video-item('fj-D1DqJwNU', 'Nanxing Edge Banding Machine for Soft Forming')
+							.swiper-pagination.swiper-pagination_videos
+							.swiper-button-prev.swiper-button-prev_videos
+							.swiper-button-next.swiper-button-next_videos
+				.about-page__statistics.statistics
+					h3.about-page__title Цифры о нас
+					.statistics__inner
+						.statistics__item
+							.statistics__pic
+								img(src="img/stat1.svg", alt="")
+							.statistics__text
+								b Выручка компании
+								p 164 млн юаней
+								p + 24.94% АППГ
+						.statistics__item
+							.statistics__pic
+								img(src="img/stat2.svg", alt="")
+							.statistics__text
+								b Базовая прибыль за акцию
+								p 0.5561  юаней
+								p + 24.80% АППГ
+						.statistics__item
+							.statistics__pic
+								img(src="img/stat3.svg", alt="")
+							.statistics__text
+								b Инвестиции в развитие
+								p 62 335 800 юаней
+								p + 22.35% АППГ
+						.statistics__item
+							.statistics__pic
+								img(src="img/stat4.svg", alt="")
+							.statistics__text
+								b Совокупные активы
+								p + 10.79% АППГ
+				.about-page__timeline.timeline 
+					h3.about-page__title Time Line
+					ul.timeline-list
+						li.timeline-list__item
+							.timeline__year 2019
+							.timeline__text 
+								p В&nbsp;феврале 2019 сеть Weiyi завершило покупку 47.00% акций компании Guangdong Zhixiang Technology Co., Ltd., и&nbsp;пакет акций в&nbsp;Zhixiang Technology увеличился до&nbsp;75.00%. Компания Zhixiang Technology стала единственным контролирующим подразделением сети
+							.timeline__pic 
+								img(src="img/time1.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 2018
+							.timeline__text 
+								p Nanxing Machinery успешно приобрела Guangdong Weiyi Network Technology Company в&nbsp;апреле 2018&nbsp;года, и&nbsp;Weiyi Network стала XNUMX% дочерней компанией Nanxing
+							.timeline__pic 
+								img(src="img/time2.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 2015
+							.timeline__text 
+								p Официальная регистрация в&nbsp;мае 2015&nbsp;на Шэньчжэньской фондовой бирже; На&nbsp;новом заводе Houjie запущено производство
+							.timeline__pic 
+								img(src="img/time3.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 2008
+							.timeline__text 
+								p Торговая марка &laquo;Nanxing&raquo; была признана как самая известная в&nbsp;Гуандуне (Guangdong)
+							.timeline__pic 
+								img(src="img/time4.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 2009
+							.timeline__text 
+								p Nanxing был признан &laquo;региональным центром технологий&raquo;
+							.timeline__pic 
+								img(src="img/time5.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 2013
+							.timeline__text 
+								p Разработка комплексного решения для производства мебели на&nbsp;заказ
+							.timeline__pic 
+								img(src="img/time6.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 2007
+							.timeline__text 
+								p Начало строительства завода Shatian, окончание строительства и&nbsp;начало производства в&nbsp;2010г
+							.timeline__pic 
+								img(src="img/time7.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 2005
+							.timeline__text 
+								p Система управления качеством ISO9001:2000
+							.timeline__pic 
+								img(src="img/time8.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 2000
+							.timeline__text 
+								p Многорядный сверлильный станок MZ7321; сборочно-сварочный цех площадью 8712&nbsp;м&sup2;
+							.timeline__pic 
+								img(src="img/time9.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 1997
+							.timeline__text 
+								p Высокоскоростной фрезер MX506 и&nbsp;ручной кромкооблицовочный станок MF50
+							.timeline__pic 
+								img(src="img/time10.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 1998
+							.timeline__text 
+								p Открытие завода в&nbsp;Houjie площадью 1100м&sup2;; Форматно-раскроечный станок MJ1128
+							.timeline__pic 
+								img(src="img/time11.svg", alt="")
+						li.timeline-list__item
+							.timeline__year 1999
+							.timeline__text 
+								p Система управления качеством ISO9001:1994; новый цех в&nbsp;Houjie
+							.timeline__pic 
+								img(src="img/time12.svg", alt="")
+						li.timeline-list__item.timeline-list__item--row
+							.timeline__year 1996
+							.timeline__text 
+								p Официальное открытие, основные станки&nbsp;&mdash; фрезерный станок MX5112 и&nbsp;холодный пресс MY50
+							.timeline__pic 
+								img(src="img/time13.svg", alt="")
+				.about-page__operation.operation
+					h3.about-page__title Принципы работы
+					.operation-top
+						.operation__subtitle 
+							p Главное для компании – закрыть потребности клиента. Поэтому Nanxing предоставляет комплекс услуг:
+						.operation__category 
+							.operation__category-item 
+								span Планирование производственного цикла
+							.operation__category-item 
+								span Подбор оборудования, установка и ввод станков в эксплуатацию
+							.operation__category-item 
+								span Техническое обучение персонала и сервисное обслуживание
+						.operation__text 
+							p Таким образом, мы помогаем предприятию оптимизировать техпроцесс, повысить эффективность предприятия и снизить издержки производства. Политика фирмы «высокие стандарты, технологии и качество» объединила выдающихся профессионалов из разных областей и вместе они разрабатывают инновационные решения, на основе которых Nanxing создает свои ключевые технологии.
+					.operation-bottom
+						.operation__subtitle 
+							p Компания располагает передовой производственной базой, включающей:
+						.operation__category.operation__category--bottom
+							.operation__category-item 
+								span Швейцарские станки для лазерной резки
+							.operation__category-item 
+								span Японские пятиосевые обрабатывающие центры
+							.operation__category-item 
+								span Немецкие вертикальные и горизонтальные обрабатывающие центры
+							.operation__category-item 
+								span Лазерные интерферометры и другие высокоточные измерительные приборы мирового класса из Германии
+						.operation__text 
+							p Cборка каждого отдельного изделия выполняется с необходимыми качеством и точностью. Мы гарантируем клиентам высочайшее качество каждого станка. Компания награждена почетным званием «высокотехнологичное предприятие национального уровня» и «предприятие с высшим уровнем выполнения обязательств по контрактам и кредитоспособности». О высоком статусе говорит и тот факт, что в 2015 году бренд был зарегистрирован на Шэньчжэньской Фондовой Бирже, на которой торгуются акции государственных компаний. Nanxing Machinery стоит на передовой развития мебельного интеллектуального оборудования и принимает потребности клиентов за основу создания новых решений, что помогает движению технического прогресса внутри компании и устойчивому развитию отрасли в целом.
+					
+
+					

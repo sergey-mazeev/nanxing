@@ -1,3 +1,4 @@
+@use "sass:math";
 .front-video {
   position: relative;
   overflow: hidden;
@@ -48,8 +49,9 @@
 	line-height: 1.1;
 	display: none;
 	b {
-	  font-weight: 1100;
-	  font-size: 140/86 + em;
+	  font-weight: 900;
+
+	  font-size: math.div(140em, 86em);
 	}
 	@media screen and (max-width: 1170px) {
 	    font-size: 70px;

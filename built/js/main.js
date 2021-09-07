@@ -222,6 +222,23 @@ window.addEventListener('load', () => {
             }
         });
     }
+
+    const advantagesNode = document.querySelector('.advantages__slider .swiper');
+    if (advantagesNode) {
+        new Swiper(advantagesNode, {
+            loop: false,
+            slidesPerView: 4,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination_advantages',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next_advantages',
+                prevEl: '.swiper-button-prev_advantages',
+            },
+        });
+    }
 });
 
 watchScrollY();

@@ -1,5 +1,9 @@
 mixin front-video
-	section.front-video
+	section.front-video.js-front-video
 		video(loop="loop" muted="true" poster='img/poster.jpg' autoplay="true")
 			source(src="./videoplayback.mp4" type="video/mp4")
 			//-autoplay="true"
+		.front-video__texts
+			.front-video__text.front-video__text_1: span Качество выше<br><b>чем цена</b>
+			.front-video__text.front-video__text_2: span Для обычных людей<br>c необычными<br>мечтами
+			.front-video__text.front-video__text_3: span Единство<br>в разнообразии

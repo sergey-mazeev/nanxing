@@ -1,3 +1,91 @@
+const body = document.body;
+
+const lockBodyScroll = () => {
+  const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+  body.style.position = 'fixed';
+  body.style.top = `-${scrollY}`;
+  body.style.paddingRight = 'calc(100% - 100vw)';
+};
+
+const unlockBodyScroll = () => {
+  const scrollY = body.style.top;
+  body.style.position = '';
+  body.style.top = '';
+  window.scrollTo(0, parseInt(scrollY || '0') * -1);
+};
+
+const showModal = (target, callBefore, callBack, settings) => {
+  // target - dom элемент или css селектор модального окна, в ином случае
+  // селектор возьмется из this (data-modal или href)
+  let targetElem;
+  if (typeof target === 'string') {
+    targetElem = document.querySelector(target);
+  }
+  else if ((target instanceof Element) && target.getAttribute('data-modal')) {
+    targetElem = document.querySelector(target.getAttribute('data-modal'));
+  }
+  else if ((target instanceof Element) && target.getAttribute('href')) {
+    targetElem = document.querySelector(target.getAttribute('href'));
+  }
+  else if (target instanceof Element) {
+    targetElem = target;
+  }
+  else if (undefined && undefined.getAttribute('data-modal')) {
+    targetElem = document.querySelector(undefined.getAttribute('data-modal'));
+  }
+  else if (undefined && undefined.getAttribute('href')) {
+    targetElem = document.querySelector(undefined.getAttribute('href'));
+  }
+  else {
+    return false;
+  }
+
+  if (typeof callBefore === 'function') {
+    callBefore();
+  }
+
+  targetElem.classList.add('modal_shown');
+  lockBodyScroll();
+
+  targetElem.addEventListener('click', (e) => {
+    if (e.target === targetElem) {
+      return closeModals();
+    }
+  });
+  window.addEventListener('keyup', (e) => {
+    if (e.key === 'Escape') {
+      return closeModals();
+    }
+
+    if (typeof callBack === 'function') {
+      callBack();
+    }
+  });
+  const closeBtns = document.querySelectorAll('.modal__close');
+  [...closeBtns].map((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      return closeModals();
+    });
+  });
+};
+
+const closeModals = () => {
+  const activeModal = document.querySelector('.modal_shown');
+  if (activeModal) {
+    activeModal.classList.remove('modal_shown');
+    unlockBodyScroll();
+    return true;
+  }
+  return false;
+};
+
+const watchScrollY = () => {
+  window.addEventListener('scroll', () => {
+    document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+  });
+};
+
 // попап поиска
 
 const showHeaderSearch = () => {
@@ -7,7 +95,7 @@ const showHeaderSearch = () => {
         if (!searchPopup.contains(e.target)) {
             hideHeaderSearch();
         }
-    })
+    });
 };
 
 const hideHeaderSearch = () => {
@@ -23,13 +111,13 @@ window.addEventListener('load', () => {
     const headerSearchPopupClose = document.getElementById('headerSearchPopupClose');
     headerSearchPopupClose.addEventListener('click', hideHeaderSearch);
 
-})
+});
 
 // swiper
 window.addEventListener('load', () => {
     const projectsNode = document.querySelector('.project-list .swiper');
     if (projectsNode) {
-        const swiperProjects = new Swiper(projectsNode, {
+        new Swiper(projectsNode, {
             slidesPerView: 'auto',
             spaceBetween: 30,
             //allowTouchMove: false,
@@ -101,7 +189,7 @@ window.addEventListener('load', () => {
     }
     const videosNode = document.querySelector('.videos-list__slider .swiper');
     if (videosNode) {
-        const swiperVideos = new Swiper(videosNode, {
+        new Swiper(videosNode, {
             loop: false,
             slidesPerView: 4,
             spaceBetween: 30,
@@ -129,10 +217,7 @@ window.addEventListener('load', () => {
             }
         });
     }
-})
-
-// modals
-import {showModal, watchScrollY} from "./modal";
+});
 
 watchScrollY();
 
@@ -149,18 +234,18 @@ const fillProjectPopupData = (node) => {
     popupContent.innerHTML = '';
     popupContent.append(img);
     popupContent.innerHTML += root.querySelector('.project-item__popup-text').innerHTML;
-}
+};
 const bindProjectPopups = () => {
     [...document.querySelectorAll('.js-project-popup')].map(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const target = e.target.href ? e.target : e.target.closest('a');
             showModal(target, () => {
-                fillProjectPopupData(target)
+                fillProjectPopupData(target);
             });
-        })
+        });
     });
-}
+};
 
 const fillPopupVideo = (videoId) => {
     const htmlString = `
@@ -170,7 +255,7 @@ const fillPopupVideo = (videoId) => {
        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
     const videoContainer = document.getElementById('video169');
     videoContainer.innerHTML = htmlString;
-}
+};
 
 window.addEventListener('load', () => {
     const youtubePopupLinks = [...document.querySelectorAll('.js-youtube-link')];
@@ -197,7 +282,7 @@ window.addEventListener('load', () => {
             default:
                 return current;
         }
-    }
+    };
 
     const controls = targetPopup.querySelectorAll('.modal__control');
     for (const control of controls) {
@@ -208,7 +293,7 @@ window.addEventListener('load', () => {
             const newIndex = calculateIndex(method, currentIndex, youtubePopupLinks.length);
             fillPopupVideo(youtubePopupLinks[newIndex].getAttribute('data-code'));
             targetPopup.setAttribute('data-current-index', String(newIndex));
-        })
+        });
     }
 
     youtubePopupLinks.map((link, index) => {
@@ -219,32 +304,32 @@ window.addEventListener('load', () => {
                 fillPopupVideo(target.getAttribute('data-code'));
                 targetPopup.setAttribute('data-current-index', String(index));
             });
-        })
+        });
     });
-})
+});
 
 // burger
 window.addEventListener('load', () => {
 
     const showMobileMenu = () => {
         document.body.classList.add('body_menu-opened');
-    }
+    };
 
     const hideMobileMenu = () => {
         document.body.classList.remove('body_menu-opened');
-    }
+    };
 
     const burger = document.getElementById('headerBurger');
     if (burger) {
         burger.addEventListener('click', (e) => {
             e.preventDefault();
             showMobileMenu();
-        })
+        });
 
         document.getElementById('headerMobileClose').addEventListener('click', (e) => {
             e.preventDefault();
             hideMobileMenu();
-        })
+        });
     }
 });
 
@@ -259,7 +344,7 @@ const fadeIn = (el, display) => {
             requestAnimationFrame(fade);
         }
     })();
-}
+};
 
 const fadeOut = (el, cb) => {
     el.style.opacity = 1;
@@ -273,7 +358,7 @@ const fadeOut = (el, cb) => {
             requestAnimationFrame(fade);
         }
     })();
-}
+};
 
 window.addEventListener('load', () => {
     const video = document.querySelector('.js-front-video');
@@ -290,11 +375,12 @@ window.addEventListener('load', () => {
                 fadeOut(elements[index], () => {
                     animateTitle(elements, nextIndex);
                 });
-            }, step)
-        }
+            }, step);
+        };
         const titles = document.querySelectorAll('.front-video__text');
         setTimeout(() => {
             animateTitle(titles);
         }, 1500);
     }
-})
+});
+//# sourceMappingURL=main.js.map

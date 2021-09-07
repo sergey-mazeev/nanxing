@@ -1,6 +1,5 @@
 # Custom
 node_modules
-built
 src/templates/layout/generated
 src/scss/generated
 package-lock.json

@@ -276,6 +276,19 @@ b, strong {
 	  width: 260px;
 	  float: right;
 	  margin: 0 0 16px 16px;
+	  @media screen and (max-width: 570px) {
+		float: none;
+		margin: 0 auto 16px;
+		display: block;
+		width: 100%;
+		max-width: 280px;
+	  }
+	}
+  }
+  .modal__body {
+	@media screen and (max-width: 380px) {
+	  padding-left: 25px;
+	  padding-right: 25px;
 	}
   }
 }
@@ -297,6 +310,9 @@ b, strong {
 	margin-bottom: 1.25em;
 	@media screen and (max-width: 800px) {
 	  font-size: 1.75em;
+	}
+	@media screen and (max-width: 414px) {
+	    font-size: 1.35em;
 	}
   }
 }

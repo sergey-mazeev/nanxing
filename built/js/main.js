@@ -152,6 +152,17 @@ window.addEventListener('load', () => {
                     swiper.params.loopedSlides = countSlides;
 
                     swiper.update();
+                    let mobileLayout = false;
+                    window.addEventListener('resize', () => {
+                        if (!mobileLayout && window.matchMedia('(max-width: 1150px)').matches) {
+                            for (const slide of swiper.slides) {
+                                slide.style.width = '100%';
+                            }
+                            swiper.updateSlides();
+                            swiper.slideReset();
+                            mobileLayout = true;
+                        }
+                    });
                 },
                 afterInit: () => {
                     bindProjectPopups();
@@ -162,27 +173,21 @@ window.addEventListener('load', () => {
                             slide.style.width = 'calc(25% - 15px)';
                         }
                         swiper.slides[swiper.activeIndex].style.width = 'calc(75% - 15px)';
-                        swiper.updateSlides();
-                        swiper.slideReset();
                     } else if (window.matchMedia('(min-width: 900px)').matches) {
                         for (const slide of swiper.slides) {
                             slide.style.width = '100%';
-                            swiper.updateSlides();
-                            swiper.slideReset();
                         }
                     } else if (window.matchMedia('(min-width: 630px)').matches) {
                         for (const slide of swiper.slides) {
                             slide.style.width = 'calc(50% - 15px)';
-                            swiper.updateSlides();
-                            swiper.slideReset();
                         }
                     } else {
                         for (const slide of swiper.slides) {
                             slide.style.width = '100%';
-                            swiper.updateSlides();
-                            swiper.slideReset();
                         }
                     }
+                    swiper.updateSlides();
+                    swiper.slideReset();
                 }
             },
         });

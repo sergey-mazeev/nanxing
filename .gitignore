@@ -5,7 +5,7 @@ src/scss/generated
 package-lock.json
 yarn.lock
 
-videoplayback.mp4
+#videoplayback.mp4
 built.zip
 
 ### macOS template

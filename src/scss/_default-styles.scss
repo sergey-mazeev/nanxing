@@ -991,7 +991,8 @@ b, strong {
 	  padding: 18px 45px 18px 25px;
 	  font-size: 18px;
 	  line-height: 1.7;
-	  max-width: 45%;
+	  max-width: 620px;
+	  min-width: 350px;
 	  flex-grow: 1;
 	}
   }
@@ -1010,6 +1011,11 @@ b, strong {
 		left: 100%;
 		top: 0;
 		transform: translateX(-50%);
+	  }
+	}
+	&_mobile {
+	  span {
+		display: none;
 	  }
 	}
   }
@@ -1086,8 +1092,10 @@ b, strong {
 }
 
 .table {
-  border-collapse: collapse;
-  font-size: 14px;
+  table {
+	border-collapse: collapse;
+	font-size: 14px;
+  }
   &_gray {
 
 	td,
@@ -1106,6 +1114,15 @@ b, strong {
   }
   &_block {
 	width: 100%;
-	max-width: 100%;
+	table {
+	  width: 100%;
+	  max-width: 100%;
+	}
+  }
+  &_responsive {
+	overflow-x: scroll;
+	td {
+	  min-width: 94px;
+	}
   }
 }

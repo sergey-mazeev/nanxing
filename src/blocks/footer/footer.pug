@@ -19,3 +19,16 @@ mixin footer
 						a.btn.btn_ghost-white(href='#'): span Заказать звонок
 
 	.copyright: .container © 2021 NANXING. Все права защищены.
+	#modal-projects.modal.modal_projects
+		.modal__body
+			.modal__header
+				.modal__title 123
+				button.modal__close закрыть
+			.modal__content
+
+	#modal-videos.modal.modal_videos
+		button.modal__control.modal__control_prev(type='button', data-action='dec') Назад
+		button.modal__control.modal__control_next(type='button', data-action='inc') Вперед
+		button.modal__close закрыть
+		.modal__body
+			.video_169#video169

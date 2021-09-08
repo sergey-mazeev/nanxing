@@ -13,7 +13,6 @@ import serve from './gulp/tasks/browsersync';
 import log from 'fancy-log';
 import color from 'gulp-color';
 import faviconSimple from "./gulp/tasks/faviconSimple";
-import deploy from './gulp/tasks/deploy';
 
 import settings from './gulp/config';
 
@@ -47,7 +46,5 @@ export const watchFiles = () => {
 export const build = series(productionConsoleAlert, clear, parallel(imgMinimization, webfonts, pug, css, javascript, vendor, faviconSimple));
 
 export const dev = series(build, parallel(watchFiles, serve, productionConsoleAlert));
-
-export const deployGH = series(build, deploy);
 
 export default dev;

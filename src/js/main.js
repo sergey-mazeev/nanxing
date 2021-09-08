@@ -320,3 +320,56 @@ window.addEventListener('load', () => {
         }, 1500);
     }
 })
+
+// set min height
+
+const setMinHeight = (arrNodes) => {
+    const height = arrNodes.reduce((acc, el) => {
+        el.style.minHeight = 'unset';
+        const elHeight = el.offsetHeight;
+        if (elHeight > acc) {
+            return elHeight;
+        }
+        return acc;
+    }, 0);
+    for (const el of arrNodes) {
+        el.style.minHeight = height + 'px';
+    }
+}
+
+const startHeightAbjust = (groups = [[]]) => {
+    for (const group of groups) {
+        setMinHeight(group);
+    }
+}
+
+window.addEventListener('load', () => {
+    const nodes = [...document.querySelectorAll('.js-set-min-height')];
+
+    const arrGroups = nodes.reduce((acc, el, index) => {
+        const dataAttributeValue = el.getAttribute('data-minheight');
+        const dataIndex = acc.selectors[dataAttributeValue];
+        if (dataIndex !== undefined) {
+            const newElements = acc.elements.slice();
+            newElements[dataIndex] = [...newElements[dataIndex], el];
+            return {
+                ...acc,
+                elements: newElements,
+            }
+        }
+        return {
+            selectors: {
+                ...acc.selectors,
+                [dataAttributeValue]: acc.elements.length,
+            },
+            elements: [...acc.elements, [el]],
+        };
+    }, {
+        selectors: {},
+        elements: [],
+    }).elements;
+
+    startHeightAbjust(arrGroups);
+
+    window.addEventListener('resize', () => {startHeightAbjust(arrGroups)});
+})
